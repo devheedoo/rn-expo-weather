@@ -25,3 +25,8 @@ $ npm start
 
 - 지원이 중단된 컴포넌트, API들은 커뮤니티에서 만들어지고, 사용된다.
 - Expo의 컴포넌트, API들도 사용할 수 있다. 많은 것들을 지원해주고, 안정적이다.
+
+## 2.4 Layout System
+
+- RN에는 display: block, inline-block, grid가 없다. 항상 flex다.
+- RN에서의 Flexbox는 웹에서와 약간 다르다. default direction이 column이다.
