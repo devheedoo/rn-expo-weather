@@ -30,3 +30,7 @@ $ npm start
 
 - RN에는 display: block, inline-block, grid가 없다. 항상 flex다.
 - RN에서의 Flexbox는 웹에서와 약간 다르다. default direction이 column이다.
+
+## 2.5 Styles
+
+- 레이아웃: 도시 이름, 날짜, 설명 표시
