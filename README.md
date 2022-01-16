@@ -34,3 +34,7 @@ $ npm start
 ## 2.5 Styles
 
 - 레이아웃: 도시 이름, 날짜, 설명 표시
+
+## 2.6 Styles Part 2
+
+- 레이아웃: ScrollView, Dimensions
