@@ -20,3 +20,8 @@ $ npm start
 ## 2.2 React Native Packages
 
 - AsyncStorage, Navigator 같은 기존의 컴포넌트, API들이 사라졌다. 이유는 RN 팀이 선택과 집중을 하기 위해서다.
+
+## 2.3 Third Party Packages
+
+- 지원이 중단된 컴포넌트, API들은 커뮤니티에서 만들어지고, 사용된다.
+- Expo의 컴포넌트, API들도 사용할 수 있다. 많은 것들을 지원해주고, 안정적이다.
