@@ -1,11 +1,42 @@
 import { StatusBar } from 'expo-status-bar';
+import * as Location from 'expo-location';
 import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
 
 export default function App() {
+  const [location, setLocation] = useState('LOADING...');
+  const [isGranted, setGranted] = useState(false);
+
+  const loadLocation = async () => {
+    const { status } = await Location.getForegroundPermissionsAsync();
+    setGranted(status === 'granted');
+
+    if (!isGranted) {
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setLocation('NOT GRANTED');
+        return;
+      }
+    }
+
+    const {
+      coords: { latitude, longitude },
+    } = await Location.getCurrentPositionAsync();
+    const locationGeocodedAddress = await Location.reverseGeocodeAsync(
+      { latitude, longitude },
+      { useGoogleMaps: false },
+    );
+    setLocation(locationGeocodedAddress[0].city);
+  };
+
+  useEffect(() => {
+    loadLocation();
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.city}>
-        <Text style={styles.cityName}>Seoul</Text>
+        <Text style={styles.cityName}>{location}</Text>
       </View>
       <View style={styles.weather}>
         <ScrollView
@@ -44,12 +75,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'tomato',
   },
   city: {
-    flex: 1,
+    flex: 1.5,
     justifyContent: 'center',
     alignItems: 'center',
   },
   cityName: {
-    fontSize: 80,
+    fontSize: 68,
     fontWeight: 'bold',
     color: 'whitesmoke',
   },

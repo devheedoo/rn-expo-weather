@@ -38,3 +38,9 @@ $ npm start
 ## 2.6 Styles Part 2
 
 - 레이아웃: ScrollView, Dimensions
+
+## 2.7 Location
+
+`$ expo install expo-location`
+
+- expo-location 사용해서 현재 지역 정보 획득
