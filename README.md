@@ -44,3 +44,8 @@ $ npm start
 `$ expo install expo-location`
 
 - expo-location 사용해서 현재 지역 정보 획득
+
+## 2.8 Weather
+
+- 날씨 정보 API: openweathermap.org/api/one-call-api
+- Activity Indicator
